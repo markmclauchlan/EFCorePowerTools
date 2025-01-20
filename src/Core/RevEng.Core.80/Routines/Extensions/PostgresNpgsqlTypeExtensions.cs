@@ -159,7 +159,7 @@ namespace RevEng.Core.Routines.Extensions
                     return isNullable ? typeof(DateTime?) : typeof(DateTime);
 
                 case NpgsqlDbType.Uuid:
-                    return isNullable ? typeof(Guid?) : typeof(Guid);
+                    return isNullable ? typeof(Ulid?) : typeof(Ulid);
 
                 default:
                     throw new ArgumentOutOfRangeException(nameof(storeType), $"storetype: {storeType}");
