@@ -156,7 +156,7 @@ order by procedure_schema,
 
             foreach (DataRow par in dtResult.Rows)
             {
-                if (par != null)
+                if (par != null && par["data_type"].ToString() != "")
                 {
                     var parameter = new ModuleParameter()
                     {
