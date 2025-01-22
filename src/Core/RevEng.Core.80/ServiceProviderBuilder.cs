@@ -25,6 +25,7 @@ using RevEng.Common;
 using RevEng.Core.Routines.Extensions;
 using SimplerSoftware.EntityFrameworkCore.SqlServer.NodaTime.Design;
 using System.Linq;
+using RevEng.Core.UlidTypeHanding;
 
 namespace RevEng.Core
 {
@@ -175,6 +176,9 @@ namespace RevEng.Core
                 var spatial = new NpgsqlNetTopologySuiteDesignTimeServices();
                 spatial.ConfigureDesignTimeServices(serviceCollection);
             }
+
+            var ulid = new UlidDesignTimeServices();
+            ulid.ConfigureDesignTimeServices(serviceCollection);
         }
 
         private static void AddSqlServerProviderServices(IServiceCollection serviceCollection, ReverseEngineerCommandOptions options)
